@@ -93,7 +93,7 @@ class post_submission_system{
         //load_textdomain('themeton', MY_ADMIN_BAR__PLUGIN_DIR.'languages/zh_TW.mo');
         load_textdomain('default', WP_LANG_DIR.'/admin-'.get_locale().'.mo');
         //languages
-        //load_plugin_textdomain( 'my-admin-bar', false, basename(dirname(__FILE__)) . '/languages/');        
+        load_plugin_textdomain( 'post-submission-system', false, basename(dirname(__FILE__)) . '/languages/');        
         
     }
 }

@@ -56,19 +56,16 @@ $error = array();
 // Check that the nonce is valid, and the user can edit this post.
 if( isset($_POST['tougao_form']) && $_POST['tougao_form'] == 'send') {
     global $wpdb;
-    $current_url = get_permalink();         //目前網址
-
+    $current_url = get_permalink();
     $last_post = $wpdb->get_var("SELECT `post_date` FROM `$wpdb->posts` ORDER BY `post_date` DESC LIMIT 1");
 
-    // 博客当前最新文章发布时间与要投稿的文章至少间隔120秒。
-    // 可自行修改时间间隔，修改下面代码中的120即可
-    // 相比Cookie来验证两次投稿的时间差，读数据库的方式更加安全
-    if ( (date_i18n('U') - strtotime($last_post)) < 120 ) {//修改時間間隔
-        //wp_die('與前次投稿相隔太近，請稍候再試！<a href="'.$current_url.'">返回前一頁</a>');
-        $error[] = __('The time interval of the submission is too close to provious one. ', 'post-submission-system');        
+    // use cookie to check that time the interval of last two submissions should
+    // be at least 120 seconds, making the system safer
+    if ( (date_i18n('U') - strtotime($last_post)) < 120 ) {//modify the time interval here
+        $error[] = __('The time interval of last submissions is too close. ', 'post-submission-system');        
     }
         
-    // 表单变量初始化
+    // initialize the variables from the form
     $name = isset( $_POST['tougao_authorname'] ) ? trim(htmlspecialchars($_POST['tougao_authorname'], ENT_QUOTES)) : '';
     $email =  isset( $_POST['tougao_authoremail'] ) ? trim(htmlspecialchars($_POST['tougao_authoremail'], ENT_QUOTES)) : '';
     //$blog =  isset( $_POST['tougao_authorblog'] ) ? trim(htmlspecialchars($_POST['tougao_authorblog'], ENT_QUOTES)) : '';
@@ -76,7 +73,7 @@ if( isset($_POST['tougao_form']) && $_POST['tougao_form'] == 'send') {
     //$category =  get_category_by_slug('article-submission')->term_id; //isset( $_POST['cat'] ) ? (int)$_POST['cat'] : 0; 
     //$content =  isset( $_POST['tougao_content'] ) ? trim(htmlspecialchars($_POST['tougao_content'], ENT_QUOTES)) : '';
     
-    // 表单项数据验证
+    // examine the variables
     if ( empty($name) || mb_strlen($name) > 20 ) {
         //die('ID必须填写，且长度不得超过20字。<a href="'.$current_url.'">返回前一頁</a>');
         $error[] = __('the length of username should be less or equal to 20. ', 'post-submission-system');        
@@ -125,12 +122,15 @@ if( isset($_POST['tougao_form']) && $_POST['tougao_form'] == 'send') {
         'post_status' => array('publish', 'pending', 'draft', 'auto-draft', 'future', 'private', 'inherit', 'trash')    
     );    
     $query_post = get_posts($query_condition);
+    
+    //debug for obtaining the lastest submission ID
     /*
     foreach($query_post as $post):setup_postdata($post);
     echo the_title().'<br />';
     endforeach;
     wp_reset_postdata();
     */
+    
     $lastest_submission_id = count($query_post)+1;
     $title = 'Submission_'.$lastest_submission_id;
     

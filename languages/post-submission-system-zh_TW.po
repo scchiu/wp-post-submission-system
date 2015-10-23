@@ -1,0 +1,178 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: wp-post-submission-system\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-23 04:03+0100\n"
+"PO-Revision-Date: 2015-10-23 04:29+0100\n"
+"Last-Translator: muscore muscore\n"
+"Language-Team: muscore muscore\n"
+"Language: Chinese (Taiwan)\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Generator: Loco https://localise.biz\n"
+"X-Loco-Source-Locale: en_US\n"
+"X-Loco-Target-Locale: zh_TW\n"
+"X-Loco-Project-Id: 11028\n"
+"X-Loco-Api-Version: 1.0.12"
+
+#: stdin:12 loco:5629a3f214d725d0678b4567
+msgctxt "post type general name"
+msgid "SPapers"
+msgstr "投稿文章"
+
+#: stdin:13 loco:5629a3f214d725d0678b4568
+msgctxt "post type singular name"
+msgid "SPaper"
+msgstr "投稿文章"
+
+#: stdin:14 loco:5629a3f214d725d0678b4569
+msgctxt "admin menu"
+msgid "SPapers"
+msgstr "投稿文章"
+
+#: stdin:15 loco:5629a3f214d725d0678b456a
+msgctxt "add admin on admin bar"
+msgid "SPaper"
+msgstr "投稿文章"
+
+#: stdin:16 loco:5629a3f214d725d0678b456b
+msgctxt "spaper"
+msgid "Add New"
+msgstr "新增"
+
+#: stdin:17 loco:5629a3f214d725d0678b456c
+msgid "Add New SPaper"
+msgstr "新增投稿文章"
+
+#: stdin:18 loco:5629a3f214d725d0678b456d
+msgid "New SPaper Item"
+msgstr "新增投稿文章"
+
+#: stdin:19 loco:5629a3f214d725d0678b456e
+msgid "Edit SPaper Item"
+msgstr "編輯投稿文章"
+
+#: stdin:20 loco:5629a3f214d725d0678b456f
+msgid "View SPaper Item"
+msgstr "查看投稿文章"
+
+#: stdin:21 loco:5629a3f214d725d0678b4570
+msgid "All SPapers"
+msgstr "所有投稿文章"
+
+#: stdin:22 loco:5629a3f214d725d0678b4571
+msgid "Search SPaper Items"
+msgstr "搜尋投稿文章"
+
+#: stdin:24 loco:5629a3f214d725d0678b4572
+msgid "No SPapers found"
+msgstr "沒有找到投稿文章"
+
+#: stdin:25 loco:5629a3f214d725d0678b4573
+msgid "No SPapers found in Trash"
+msgstr "垃圾桶裡沒有找到投稿文章"
+
+#: stdin:55 loco:5629a3f214d725d0678b4574
+msgctxt "taxonomy general name"
+msgid "Category"
+msgstr "分類"
+
+#: stdin:56 loco:5629a3f214d725d0678b4575
+msgctxt "taxonomy singular name"
+msgid "Category"
+msgstr "分類"
+
+#: stdin:57 loco:5629a3f214d725d0678b4576
+msgid "Search Category"
+msgstr "搜尋分類"
+
+#: stdin:58 loco:5629a3f214d725d0678b4577
+msgid "All Category"
+msgstr "所有分類"
+
+#: stdin:59 loco:5629a3f214d725d0678b4578
+msgid "Parent Category"
+msgstr "上層分類"
+
+#: stdin:60 loco:5629a3f214d725d0678b4579
+msgid "Parent Category:"
+msgstr "上層分類："
+
+#: stdin:61 loco:5629a3f214d725d0678b457a
+msgid "Edit Category"
+msgstr "編輯分類"
+
+#: stdin:62 loco:5629a3f214d725d0678b457b
+msgid "Update Category"
+msgstr "更新分類"
+
+#: stdin:63 loco:5629a3f214d725d0678b457c
+msgid "Add New Category"
+msgstr "新增分類"
+
+#: stdin:64 loco:5629a3f214d725d0678b457d
+msgid "New Category Name"
+msgstr "新分類名稱"
+
+#: stdin:65 loco:5629a3f214d725d0678b457e
+msgid "Category"
+msgstr "分類"
+
+#: stdin:113 loco:5629a3f214d725d0678b457f
+msgid "Content"
+msgstr "內容"
+
+#: stdin:65 loco:5629a41d14d725ff678b4567
+msgid "The time interval of last submissions is too close. "
+msgstr "與前一次投稿時間間隔相隔太近。"
+
+#: stdin:79 loco:5629a41d14d725ff678b4568
+msgid "the length of username should be less or equal to 20. "
+msgstr "帳號長度必須小於或等於20。"
+
+#: stdin:84 loco:5629a41d14d725ff678b4569
+msgid "Email should be filled and meets Email format. "
+msgstr "Email格式不符。"
+
+#: stdin:100 loco:5629a41d14d725ff678b456a
+msgid "Please attach the article file. "
+msgstr "請附加檔案。"
+
+#: stdin:104 loco:5629a41d14d725ff678b456b
+msgid "Please attach PDF file format. "
+msgstr "請附加PDF檔案。"
+
+#: stdin:108 loco:5629a41d14d725ff678b456c
+msgid "File size should be less than 2 MB. "
+msgstr "檔案需小於2MB。"
+
+#: stdin:175 loco:5629a41d14d725ff678b456d
+msgid "Submission successfully! "
+msgstr "投稿成功！"
+
+#: stdin:200 loco:5629a41d14d725ff678b456e
+msgid "Article Submission"
+msgstr "投稿文章"
+
+#: stdin:203 loco:5629a41d14d725ff678b456f
+msgid "Please log in to submit your article."
+msgstr "請先登入才可投稿文章。"
+
+#: stdin:211 loco:5629a41d14d725ff678b4570
+msgid "Username"
+msgstr "帳號"
+
+#: stdin:216 loco:5629a41d14d725ff678b4571
+msgid "E-Mail"
+msgstr "電子郵件"
+
+#: stdin:242 loco:5629a41d14d725ff678b4572
+msgid "File Upload (PDF, <2MB)"
+msgstr "上傳檔案（PDF, <2MB）"
+
+#: stdin:250 loco:5629a41d14d725ff678b4573
+msgid "Submit"
+msgstr "遞交"

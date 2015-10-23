@@ -62,7 +62,7 @@ function spaper_taxonomies() {
         'update_item'       => __( 'Update Category' ),
         'add_new_item'      => __( 'Add New Category' ),
         'new_item_name'     => __( 'New Category Name' ),
-        'menu_name'         => __( 'Category' ),
+        'menu_name'         => __( 'Category', 'post-submission-system'),
     );
 
     $args = array(
@@ -103,6 +103,7 @@ function ST4_get_post_content($post_ID){
     return $current_post->post_content;
 }
 
+add_filter('manage_spaper_posts_columns', 'ST4_columns_head');
 // ADD NEW COLUMN
 function ST4_columns_head($defaults) {
     //$defaults['featured_image'] = 'Featured Image';
@@ -114,7 +115,8 @@ function ST4_columns_head($defaults) {
     //print_r($res);
     return $res;
 }
- 
+
+add_action('manage_spaper_posts_custom_column', 'ST4_columns_content', 10, 2);
 // SHOW THE FEATURED IMAGE
 function ST4_columns_content($column_name, $post_ID) {
     if ($column_name == 'featured_image') {
@@ -131,10 +133,6 @@ function ST4_columns_content($column_name, $post_ID) {
         echo ST4_get_post_content($post_ID);
     }
 }
-
-
-add_filter('manage_spaper_posts_columns', 'ST4_columns_head');
-add_action('manage_spaper_posts_custom_column', 'ST4_columns_content', 10, 2);
 
 // REMOVE DEFAULT CATEGORY COLUMN
 add_filter('manage_spaper_posts_columns', 'ST4_columns_remove_category');

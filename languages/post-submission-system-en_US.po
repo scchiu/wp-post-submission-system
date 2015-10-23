@@ -1,0 +1,178 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: wp-post-submission-system\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-23 04:03+0100\n"
+"PO-Revision-Date: 2015-10-23 04:30+0100\n"
+"Last-Translator: muscore muscore\n"
+"Language-Team: muscore muscore\n"
+"Language: English (USA)\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Generator: Loco https://localise.biz\n"
+"X-Loco-Source-Locale: en_US\n"
+"X-Loco-Target-Locale: en_US\n"
+"X-Loco-Project-Id: 11028\n"
+"X-Loco-Api-Version: 1.0.12"
+
+#: stdin:12 loco:5629a3f214d725d0678b4567
+msgctxt "post type general name"
+msgid "SPapers"
+msgstr "SPapers"
+
+#: stdin:13 loco:5629a3f214d725d0678b4568
+msgctxt "post type singular name"
+msgid "SPaper"
+msgstr "SPaper"
+
+#: stdin:14 loco:5629a3f214d725d0678b4569
+msgctxt "admin menu"
+msgid "SPapers"
+msgstr "SPapers"
+
+#: stdin:15 loco:5629a3f214d725d0678b456a
+msgctxt "add admin on admin bar"
+msgid "SPaper"
+msgstr "SPaper"
+
+#: stdin:16 loco:5629a3f214d725d0678b456b
+msgctxt "spaper"
+msgid "Add New"
+msgstr "Add New"
+
+#: stdin:17 loco:5629a3f214d725d0678b456c
+msgid "Add New SPaper"
+msgstr "Add New SPaper"
+
+#: stdin:18 loco:5629a3f214d725d0678b456d
+msgid "New SPaper Item"
+msgstr "New SPaper Item"
+
+#: stdin:19 loco:5629a3f214d725d0678b456e
+msgid "Edit SPaper Item"
+msgstr "Edit SPaper Item"
+
+#: stdin:20 loco:5629a3f214d725d0678b456f
+msgid "View SPaper Item"
+msgstr "View SPaper Item"
+
+#: stdin:21 loco:5629a3f214d725d0678b4570
+msgid "All SPapers"
+msgstr "All SPapers"
+
+#: stdin:22 loco:5629a3f214d725d0678b4571
+msgid "Search SPaper Items"
+msgstr "Search SPaper Items"
+
+#: stdin:24 loco:5629a3f214d725d0678b4572
+msgid "No SPapers found"
+msgstr "No SPapers found"
+
+#: stdin:25 loco:5629a3f214d725d0678b4573
+msgid "No SPapers found in Trash"
+msgstr "No SPapers found in Trash"
+
+#: stdin:55 loco:5629a3f214d725d0678b4574
+msgctxt "taxonomy general name"
+msgid "Category"
+msgstr "Category"
+
+#: stdin:56 loco:5629a3f214d725d0678b4575
+msgctxt "taxonomy singular name"
+msgid "Category"
+msgstr "Category"
+
+#: stdin:57 loco:5629a3f214d725d0678b4576
+msgid "Search Category"
+msgstr "Search Category"
+
+#: stdin:58 loco:5629a3f214d725d0678b4577
+msgid "All Category"
+msgstr "All Category"
+
+#: stdin:59 loco:5629a3f214d725d0678b4578
+msgid "Parent Category"
+msgstr "Parent Category"
+
+#: stdin:60 loco:5629a3f214d725d0678b4579
+msgid "Parent Category:"
+msgstr "Parent Category:"
+
+#: stdin:61 loco:5629a3f214d725d0678b457a
+msgid "Edit Category"
+msgstr "Edit Category"
+
+#: stdin:62 loco:5629a3f214d725d0678b457b
+msgid "Update Category"
+msgstr "Update Category"
+
+#: stdin:63 loco:5629a3f214d725d0678b457c
+msgid "Add New Category"
+msgstr "Add New Category"
+
+#: stdin:64 loco:5629a3f214d725d0678b457d
+msgid "New Category Name"
+msgstr "New Category Name"
+
+#: stdin:65 loco:5629a3f214d725d0678b457e
+msgid "Category"
+msgstr "Category"
+
+#: stdin:113 loco:5629a3f214d725d0678b457f
+msgid "Content"
+msgstr "Content"
+
+#: stdin:65 loco:5629a41d14d725ff678b4567
+msgid "The time interval of last submissions is too close. "
+msgstr "The time interval of last submissions is too close. "
+
+#: stdin:79 loco:5629a41d14d725ff678b4568
+msgid "the length of username should be less or equal to 20. "
+msgstr "the length of username should be less or equal to 20. "
+
+#: stdin:84 loco:5629a41d14d725ff678b4569
+msgid "Email should be filled and meets Email format. "
+msgstr "Email should be filled and meets Email format. "
+
+#: stdin:100 loco:5629a41d14d725ff678b456a
+msgid "Please attach the article file. "
+msgstr "Please attach the article file. "
+
+#: stdin:104 loco:5629a41d14d725ff678b456b
+msgid "Please attach PDF file format. "
+msgstr "Please attach PDF file format. "
+
+#: stdin:108 loco:5629a41d14d725ff678b456c
+msgid "File size should be less than 2 MB. "
+msgstr "File size should be less than 2 MB. "
+
+#: stdin:175 loco:5629a41d14d725ff678b456d
+msgid "Submission successfully! "
+msgstr "Submission successfully! "
+
+#: stdin:200 loco:5629a41d14d725ff678b456e
+msgid "Article Submission"
+msgstr "Article Submission"
+
+#: stdin:203 loco:5629a41d14d725ff678b456f
+msgid "Please log in to submit your article."
+msgstr "Please log in to submit your article."
+
+#: stdin:211 loco:5629a41d14d725ff678b4570
+msgid "Username"
+msgstr "Username"
+
+#: stdin:216 loco:5629a41d14d725ff678b4571
+msgid "E-Mail"
+msgstr "E-Mail"
+
+#: stdin:242 loco:5629a41d14d725ff678b4572
+msgid "File Upload (PDF, <2MB)"
+msgstr "File Upload (PDF, <2MB)"
+
+#: stdin:250 loco:5629a41d14d725ff678b4573
+msgid "Submit"
+msgstr "Submit"
