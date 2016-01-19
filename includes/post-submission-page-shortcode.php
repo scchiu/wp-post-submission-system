@@ -45,10 +45,15 @@ function post_submission_page_scripts() {
     wp_enqueue_script( 'custom-script1', plugins_url( '/assets/bootstrap-3.3.5-dist/js/bootstrap.min.js', __FILE__ ),array('jquery'), '1.0.0',true );    
     //wp_enqueue_script( 'script-bootstrap-select', plugins_url( '/assets/js/bootstrap-select.js', __FILE__ ),array('jquery'), '1.0.0',true );        
 }
-add_action( 'wp_enqueue_scripts', 'post_submission_page_scripts' );
+//add_action( 'wp_enqueue_scripts', 'post_submission_page_scripts' );
 
 function pss_page_shortcode(){
 ?>
+
+<div class="main-container">
+    <div class="container">
+        <h1><?php _e('Article Submission','post-submission-page');//文章投稿;?></h1>        
+
 <!------------------ begin of post action --------------------->
 <?php
 
@@ -111,7 +116,7 @@ if( isset($_POST['tougao_form']) && $_POST['tougao_form'] == 'send') {
     // check the attachment, get ready to upload    
     if(isset($_POST['tougao_pdf_nonce']) 
             && wp_verify_nonce($_POST['tougao_pdf_nonce'], 'tougao_pdf') 
-            && current_user_can('edit_post', $status)
+            && current_user_can('edit_posts')//, $status)
             && count($error) == 0){
         
     /* begin of inserting post into database */
@@ -172,7 +177,7 @@ if( isset($_POST['tougao_form']) && $_POST['tougao_form'] == 'send') {
             $post_content = 'Attachment URL: '.$att_link.'<br />Username: '.$name.'<br />Email: '.$email;
             wp_update_post(array('ID' => $status,'post_content' => $post_content));
 
-            echo '<p class="bg-success" style="padding: 10px;">'.__('Submission successfully! ','post-submission-system').'</p>';
+            echo '<p class="alert alert-success" role="alert" style="">'.__('Submission successfully! ','post-submission-system').'</p>';
             
     /* send email to author */
             //wp_mail("somebody#example.com","My subject","content");
@@ -196,67 +201,66 @@ if( isset($_POST['tougao_form']) && $_POST['tougao_form'] == 'send') {
 
 <!-- my custom page -->
 
-<div class="entry-content entry">
-    <h1><?php _e('Article Submission','post-submission-page');//文章投稿;?></h1>
-    <?php if ( !is_user_logged_in() ) : ?>
-        <?php echo '<p class="bg-warning" style="padding:10px;">'.
-            __('Please log in to submit your article.', 'post-submission-page').'</p>'//請先登入，才可更新個人資訊！'; ?>
-    <?php else : ?>
-        <?php if ( count($error) > 0 ) echo '<p class="error bg-warning" style="padding: 10px;">' . implode("<br />", $error) . '</p>'; ?>
-        <?php $current_user = wp_get_current_user();?>
+        <?php if ( !is_user_logged_in() ) : ?>
+            <?php echo '<p class="alert alert-info" role="alert" style="">'.
+                __('Please log in to submit your article.', 'post-submission-page').'</p>'//請先登入，才可更新個人資訊！'; ?>
+        <?php else : ?>
+            <?php if ( count($error) > 0 ) echo '<p class="alert alert-warning" role="alert" style="">' . implode("<br />", $error) . '</p>'; ?>
+            <?php $current_user = wp_get_current_user();?>
 
-<!-- begin of form -->
-<form class="ludou-tougao" method="post" action="<?php echo $_SERVER["REQUEST_URI"];  ?>" enctype="multipart/form-data">
-    <div class="form-group" style="text-align: left; padding-top: 10px;">
-        <label for="tougao_authorname"><?php _e('Username','post-submission-page');//ID ?></label>
-        <input class="form-control" type="text" size="40" value="<?php if ( 0 != $current_user->ID ) echo $current_user->user_login; ?>" id="tougao_authorname" name="tougao_authorname" readonly="readonly"/>
-    </div>
+        <!-- begin of form -->
+        <form class="ludou-tougao" method="post" action="<?php echo $_SERVER["REQUEST_URI"];  ?>" enctype="multipart/form-data">
+            <div class="form-group" style="/*text-align: left; padding-top: 10px;*/">
+                <label for="tougao_authorname"><?php _e('Username','post-submission-page');//ID ?></label>
+                <input class="form-control" type="text" size="40" value="<?php if ( 0 != $current_user->ID ) echo $current_user->user_login; ?>" id="tougao_authorname" name="tougao_authorname" readonly="readonly"/>
+            </div>
 
-    <div class="form-group" style="text-align: left; padding-top: 10px;">
-        <label for="tougao_authoremail"><?php _e('E-Mail','post-submission-page');//E-Mail ?> </label>
-        <input class="form-control" type="text" size="40" value="<?php if ( 0 != $current_user->ID ) echo $current_user->user_email; ?>" id="tougao_authoremail" name="tougao_authoremail" readonly="readonly"/>
-    </div>
-    <!--                
-    <div style="text-align: left; padding-top: 10px;">
-        <label for="tougao_authorblog">您的博客:</label>
-        <input type="text" size="40" value="<?php //if ( 0 != $current_user->ID ) echo $current_user->user_url; ?>" id="tougao_authorblog" name="tougao_authorblog" />
-    </div>
+            <div class="form-group" style="/*text-align: left; padding-top: 10px;*/">
+                <label for="tougao_authoremail"><?php _e('E-Mail','post-submission-page');//E-Mail ?> </label>
+                <input class="form-control" type="text" size="40" value="<?php if ( 0 != $current_user->ID ) echo $current_user->user_email; ?>" id="tougao_authoremail" name="tougao_authoremail" readonly="readonly"/>
+            </div>
+            <!--                
+            <div style="text-align: left; padding-top: 10px;">
+                <label for="tougao_authorblog">您的博客:</label>
+                <input type="text" size="40" value="<?php //if ( 0 != $current_user->ID ) echo $current_user->user_url; ?>" id="tougao_authorblog" name="tougao_authorblog" />
+            </div>
 
-    <div style="text-align: left; padding-top: 10px;">
-        <label for="tougao_title">文章标题:*</label>
-        <input type="text" size="40" value="" id="tougao_title" name="tougao_title" />
-    </div>
+            <div style="text-align: left; padding-top: 10px;">
+                <label for="tougao_title">文章标题:*</label>
+                <input type="text" size="40" value="" id="tougao_title" name="tougao_title" />
+            </div>
 
-    <div class="form-group" style="text-align: left; padding-top: 10px; display: none;">
-        <label for="tougaocategorg">分類 </label>
-        <?php //wp_dropdown_categories('hide_empty=0&id=tougaocategorg&show_count=1&hierarchical=1'); ?>
-    </div>
-                  
-    <div style="text-align: left; padding-top: 10px;">
-        <label style="vertical-align:top" for="tougao_content">文章内容:*</label>
-        <textarea rows="15" cols="55" id="tougao_content" name="tougao_content"></textarea>
-    </div>
-    -->
-    
-    <div class="form-group" style="text-align: left; padding-top: 10px;">
-        <label for="tougaoupload"><?php _e('File Upload (PDF, <2MB)', 'post-submission-page');//上傳文章 (PDF, 小於2MB)?> </label>
-        <input class="form-control" type="file" id="tougao_pdf" name="tougao_pdf" />
-        <?php wp_nonce_field('tougao_pdf', 'tougao_pdf_nonce'); ?>
-    </div>    
-    
-    <br clear="all">
-    <div style="text-align: center; padding-top: 10px;">
-        <input type="hidden" value="send" name="tougao_form" />
-        <input type="submit" value="<?php _e('Submit', 'post-submission-page');//提交?>" name="submit"/>
-        <!--<input type="reset" value="<?php //_e('Reset', 'post-submission-page');//重填?>" />-->
-    </div>
-</form> <!-- end of form -->   
-    
-    <?php endif; ?>
-</div><!-- .entry-content -->
+            <div class="form-group" style="text-align: left; padding-top: 10px; display: none;">
+                <label for="tougaocategorg">分類 </label>
+                <?php //wp_dropdown_categories('hide_empty=0&id=tougaocategorg&show_count=1&hierarchical=1'); ?>
+            </div>
 
+            <div style="text-align: left; padding-top: 10px;">
+                <label style="vertical-align:top" for="tougao_content">文章内容:*</label>
+                <textarea rows="15" cols="55" id="tougao_content" name="tougao_content"></textarea>
+            </div>
+            -->
 
-<!-- end of my cumstom page -->                                    
+            <div class="form-group" style="/*text-align: left; padding-top: 10px;*/">
+                <label for="tougaoupload"><?php _e('File Upload (PDF, <2MB)', 'post-submission-page');//上傳文章 (PDF, 小於2MB)?> </label>
+                <input class="form-control" type="file" id="tougao_pdf" name="tougao_pdf" />
+                <?php wp_nonce_field('tougao_pdf', 'tougao_pdf_nonce'); ?>
+            </div>    
+
+            <br clear="all">
+            <div style="/*text-align: center; padding-top: 10px;*/">
+                <input type="hidden" value="send" name="tougao_form" />
+                <input class="btn btn-default" type="submit" value="<?php _e('Submit', 'post-submission-page');//提交?>" name="submit"/>
+                <!--<input type="reset" value="<?php //_e('Reset', 'post-submission-page');//重填?>" />-->
+            </div>
+        </form> 
+        <!-- end of form -->   
+
+        <?php endif; ?>
+    <!-- end of my cumstom page -->                                    
+    </div><!-- .entry-content -->
+</div>
+
 <?php
 }
 add_shortcode('pss_page_shortcode', 'pss_page_shortcode');

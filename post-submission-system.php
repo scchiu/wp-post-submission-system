@@ -2,7 +2,7 @@
 /*
   Plugin Name: post-submission-system
   Plugin URI: 
-  Description: Provide shortcode [pss_shortcode] to create submission section and create admin management page
+  Description: Provide shortcode [pss_page_shortcode] to create submission section and create admin management page
   Version: 1.0.0
   Author: Steve
   Author URI: 
