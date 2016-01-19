@@ -52,7 +52,7 @@ function pss_page_shortcode(){
 
 <div class="main-container">
     <div class="container">
-        <h1><?php _e('Article Submission','post-submission-page');//文章投稿;?></h1>        
+        <h1><?php _e('Article Submission','post-submission-system');//文章投稿;?></h1>        
 
 <!------------------ begin of post action --------------------->
 <?php
@@ -203,7 +203,7 @@ if( isset($_POST['tougao_form']) && $_POST['tougao_form'] == 'send') {
 
         <?php if ( !is_user_logged_in() ) : ?>
             <?php echo '<p class="alert alert-info" role="alert" style="">'.
-                __('Please log in to submit your article.', 'post-submission-page').'</p>'//請先登入，才可更新個人資訊！'; ?>
+                __('Please log in to submit your article.', 'post-submission-system').'</p>'//請先登入，才可更新個人資訊！'; ?>
         <?php else : ?>
             <?php if ( count($error) > 0 ) echo '<p class="alert alert-warning" role="alert" style="">' . implode("<br />", $error) . '</p>'; ?>
             <?php $current_user = wp_get_current_user();?>
@@ -211,12 +211,12 @@ if( isset($_POST['tougao_form']) && $_POST['tougao_form'] == 'send') {
         <!-- begin of form -->
         <form class="ludou-tougao" method="post" action="<?php echo $_SERVER["REQUEST_URI"];  ?>" enctype="multipart/form-data">
             <div class="form-group" style="/*text-align: left; padding-top: 10px;*/">
-                <label for="tougao_authorname"><?php _e('Username','post-submission-page');//ID ?></label>
+                <label for="tougao_authorname"><?php _e('Username');//ID ?></label>
                 <input class="form-control" type="text" size="40" value="<?php if ( 0 != $current_user->ID ) echo $current_user->user_login; ?>" id="tougao_authorname" name="tougao_authorname" readonly="readonly"/>
             </div>
 
             <div class="form-group" style="/*text-align: left; padding-top: 10px;*/">
-                <label for="tougao_authoremail"><?php _e('E-Mail','post-submission-page');//E-Mail ?> </label>
+                <label for="tougao_authoremail"><?php _e('Email');//E-Mail ?> </label>
                 <input class="form-control" type="text" size="40" value="<?php if ( 0 != $current_user->ID ) echo $current_user->user_email; ?>" id="tougao_authoremail" name="tougao_authoremail" readonly="readonly"/>
             </div>
             <!--                
@@ -242,7 +242,7 @@ if( isset($_POST['tougao_form']) && $_POST['tougao_form'] == 'send') {
             -->
 
             <div class="form-group" style="/*text-align: left; padding-top: 10px;*/">
-                <label for="tougaoupload"><?php _e('File Upload (PDF, <2MB)', 'post-submission-page');//上傳文章 (PDF, 小於2MB)?> </label>
+                <label for="tougaoupload"><?php _e('File Upload (PDF, <2MB)', 'post-submission-system');//上傳文章 (PDF, 小於2MB)?> </label>
                 <input class="form-control" type="file" id="tougao_pdf" name="tougao_pdf" />
                 <?php wp_nonce_field('tougao_pdf', 'tougao_pdf_nonce'); ?>
             </div>    
@@ -250,8 +250,8 @@ if( isset($_POST['tougao_form']) && $_POST['tougao_form'] == 'send') {
             <br clear="all">
             <div style="/*text-align: center; padding-top: 10px;*/">
                 <input type="hidden" value="send" name="tougao_form" />
-                <input class="btn btn-default" type="submit" value="<?php _e('Submit', 'post-submission-page');//提交?>" name="submit"/>
-                <!--<input type="reset" value="<?php //_e('Reset', 'post-submission-page');//重填?>" />-->
+                <input class="btn btn-default" type="submit" value="<?php _e('Submit', 'post-submission-system');//提交?>" name="submit"/>
+                <!--<input type="reset" value="<?php //_e('Reset', 'post-submission-system');//重填?>" />-->
             </div>
         </form> 
         <!-- end of form -->   
